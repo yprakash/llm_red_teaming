@@ -1,0 +1,5 @@
+accelerate==1.11.0
+notebook==7.4.7
+python-dotenv==1.2.1
+torch==2.9.0
+transformers==4.57.1
