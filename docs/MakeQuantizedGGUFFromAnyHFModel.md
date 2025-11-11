@@ -95,6 +95,8 @@ snapshot_download(
 Why: the converter expects a local HF-style model folder (with `config.json`, `tokenizer.*`, and
 `*.safetensors` or `pytorch_model.bin`). `snapshot_download` handles sharded weights and LFS transparently.
 
+**Note**: Please use [download_hf_model](/utils/download_hf_model.py)
+
 ---
 ### 5) Convert HF folder → GGUF
 From inside the `llama.cpp` repo root (where `convert_hf_to_gguf.py` resides):
@@ -106,6 +108,8 @@ typically large (e.g., ~4–6GB for a 3B FP16/BF16 model) because it stores unqu
 
 Notes: depending on model type, you may need to pass architecture-specific flags (rare).
 Read `python3 convert_hf_to_gguf.py -h` for options.
+
+Once done, optionally we can `deactivate` from python env.
 
 ---
 ### 6) Quantize GGUF (reduce size & memory)
